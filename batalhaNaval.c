@@ -140,6 +140,103 @@ int main()
     }
     printf("\n");
 
+
+
+        //ÁREA PARA COLOCAR O NAVIO NA DIAGONAL DIREITA
+
+    coordenada_x_navio = 1;
+    coordenada_y_navio = 5;
+
+    if ((coordenada_x_navio > 0) && (coordenada_x_navio <= 8) && (coordenada_y_navio > 0) && (coordenada_y_navio <= 8))
+    {
+        for (int q_campos = 0; q_campos < 3; q_campos++)
+        {
+            if (tabuleiro[coordenada_x_navio - 1 + q_campos][coordenada_y_navio - 1 + q_campos] == 3)
+            {
+                printf("Já existe um navio neste lugar! \n");
+                printf("\n");
+                return 0;
+            }
+        }
+        for (int q_campos = 0; q_campos < 3; q_campos++)
+        {
+            tabuleiro[coordenada_x_navio - 1 + q_campos][coordenada_y_navio - 1 + q_campos] = 3;
+        }
+    }else
+    {
+        printf("Navio fora do tabuleiro! \n");
+        printf("\n");
+        return 0;
+    }
+    printf("\n");
+
+
+            //ÁREA PARA MOSTRAR O TABULEIRO
+
+    printf("  ");
+    for (char i = 'A'; i < 'K'; i++)
+    {
+        printf("%c ", i);
+    }
+    printf("\n");
+    for (coordenada_y = 0; coordenada_y < 10; coordenada_y++)
+    {
+        printf("%d ", coordenada_y + 1);
+        for (coordenada_x = 0; coordenada_x < 10; coordenada_x++)
+        {
+            printf("%d ", tabuleiro[coordenada_x][coordenada_y]);
+        }
+        printf("\n");
+    }
+    printf("\n");
+
+        //ÁREA PARA COLOCAR O NAVIO NA DIAGONAL ESQUERDA
+
+    coordenada_x_navio = 5;
+    coordenada_y_navio = 2;
+
+    if ((coordenada_x_navio > 3) && (coordenada_x_navio <= 10) && (coordenada_y_navio > 0) && (coordenada_y_navio <= 8))
+    {
+        for (int q_campos = 0; q_campos < 3; q_campos++)
+        {
+            if (tabuleiro[coordenada_x_navio - 1 - q_campos][coordenada_y_navio - 1 + q_campos] == 3)
+            {
+                printf("Já existe um navio neste lugar! \n");
+                printf("\n");
+                return 0;
+            }
+        }
+        for (int q_campos = 0; q_campos < 3; q_campos++)
+        {
+            tabuleiro[coordenada_x_navio - 1 - q_campos][coordenada_y_navio - 1 + q_campos] = 3;
+        }
+    }else
+    {
+        printf("Navio fora do tabuleiro! \n");
+        printf("\n");
+        return 0;
+    }
+    printf("\n");
+
+
+            //ÁREA PARA MOSTRAR O TABULEIRO
+
+    printf("  ");
+    for (char i = 'A'; i < 'K'; i++)
+    {
+        printf("%c ", i);
+    }
+    printf("\n");
+    for (coordenada_y = 0; coordenada_y < 10; coordenada_y++)
+    {
+        printf("%d ", coordenada_y + 1);
+        for (coordenada_x = 0; coordenada_x < 10; coordenada_x++)
+        {
+            printf("%d ", tabuleiro[coordenada_x][coordenada_y]);
+        }
+        printf("\n");
+    }
+
     return 0;
 }
     
